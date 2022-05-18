@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<!-- saved from url=(0140)https://pass.ujs.edu.cn/cas/login?service=http%3A%2F%2Fehall.ujs.edu.cn%2Flogin%3Fservice%3Dhttp%3A%2F%2Fehall.ujs.edu.cn%2Fnew%2Findex.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="width=device-width,initial-scale=0.8, minimum-scale=0.8, maximum-scale=3" name="viewport">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta property="qc:admins" content="754034015366713545637571540352652">
+    <meta property="wb:webmaster" content="1ad39047f32b5b6b">
+    <title>统一身份认证</title>
+<script>
+    
+
+</script><link href="./统一身份认证_files/login.css" rel="stylesheet"><link href="./统一身份认证_files/custom.css" rel="stylesheet"><script type="text/javascript">
+    var secure = "true";
+    var pwdDefaultEncryptSalt = "DyeV240tgfh5VPAr";
+</script></head>
+
+
+
+
+
+
+
+
+
+
+
+<body onload="loadFresh();" class="qr_scan_box">
+<div class="auth_bg">
+    <img src="./统一身份认证_files/login-bg-autumn.jpg" alt="">
+</div>
+<div class="auth-language">
+    <div class="switchingbox auth-language-select">
+		<span class="iconfont"></span>
+		<span style="margin-right: 10px;" class="language_text">English</span>
+        <!--<select id="language" onchange="changeLanguage()">
+            <option value="zh_CN">简体中文</option>
+            <option value="en">English</option>
+        </select>
+		<span id="langChinese" class="" onClick="changeLanguageCustom('zh_CN')" value="zh_CN" style="display:none">简体中文</span>
+		<span id="langEnglish" class="" onClick="changeLanguageCustom('en')" value="en" >English</span>-->
+    </div>
+</div>
+
+<div class="headerbg">
+	<div class="headerbox">
+		<div class="auth_logo">
+			<img src="./统一身份认证_files/logo3.png" alt="logo">
+		</div>
+		<!--<div class="switchingbox">
+			<div id="language" onchange="changeLanguage()">
+				<span class="iconfont">&#xe605;</span>
+				English
+			</div>
+			<div id="language" onchange="changeLanguage()" style="display:none;">
+				<span class="iconfont">&#xe605;</span>
+				简体中文
+			</div>
+		</div>
+		<div class="clearfix"></div>-->
+	</div>
+</div>
+
+<div class="auth_page_wrapper">
+<div class="auth_logo" style="display:none;">
+    <img src="./统一身份认证_files/logo1.png" alt="logo">
+</div>
+<div class="auth_login_content">
+    <div class="auth_login_left">
+        <div class="auth_others" style="display:none;">
+            
+                <h4>您还可以使用以下方式登录</h4>
+                <ul>
+                    
+                        <li>
+                            <a href="https://pass.ujs.edu.cn/cas/combinedLogin.do?type=qq&amp;success=https://pass.ujs.edu.cn/cas/login?service=http%3A%2F%2Fehall.ujs.edu.cn%2Flogin%3Fservice%3Dhttp%3A%2F%2Fehall.ujs.edu.cn%2Fnew%2Findex.html" style="display: inline-block;">
+                                    <span class="auth_icon_bg">
+                                        <i class="auth_icon_qq"></i>
+                                    </span>
+                                <span class="auth_icon_text">使用腾讯QQ登录</span>
+                            </a>
+			
+                        </li>
+                    
+                        <li>
+                            <a href="https://pass.ujs.edu.cn/cas/combinedLogin.do?type=weixin&amp;success=https://pass.ujs.edu.cn/cas/login?service=http%3A%2F%2Fehall.ujs.edu.cn%2Flogin%3Fservice%3Dhttp%3A%2F%2Fehall.ujs.edu.cn%2Fnew%2Findex.html" style="display: inline-block;">
+                                    <span class="auth_icon_bg">
+                                        <i class="auth_icon_weixin"></i>
+                                    </span>
+                                <span class="auth_icon_text">使用微信登录</span>
+                            </a>
+			
+                        </li>
+                    
+                        <li>
+                            <a href="https://pass.ujs.edu.cn/cas/combinedLogin.do?type=qrcode&amp;success=https://pass.ujs.edu.cn/cas/login?service=http%3A%2F%2Fehall.ujs.edu.cn%2Flogin%3Fservice%3Dhttp%3A%2F%2Fehall.ujs.edu.cn%2Fnew%2Findex.html" style="display: inline-block;">
+                                    <span class="auth_icon_bg">
+                                        <i class="auth_icon_qrcode"></i>
+                                    </span>
+                                <span class="auth_icon_text">使用二维码登录</span>
+                            </a>
+			
+                        </li>
+                    
+                </ul>
+            
+        </div>
+    </div>
+    
+        
+            
+        
+        
+        
+    
+    <div class="auth_login_right">
+        <div class="auth_tab">
+            <div class="auth_tab_links">
+                <ul>
+                    <li style="width:113px;" id="accountLogin" class="selected" tabid="01"><span>账号登录</span></li>
+					
+						<li style="width:113px;" id="dyLogin" tabid="02"><i></i><span>短信登录</span></li>
+					
+					
+			            <li style="width:113px;" id="qrLogin" tabid="03" class="qrLogin"><i></i><span>扫码登录</span></li>
+                    
+				</ul>
+            </div>
+            <div class="clearfloat"></div>
+            <div class="auth_tab_content">
+                <div tabid="01" class="auth_tab_content_item" style="display: block;">
+                    <form id="casLoginForm" class="fm-v clearfix amp-login-form" role="form" action="fake.html" method="post">
+                        
+
+                        <p>
+                            <i class="auth_icon auth_icon_user"></i>
+                            <input id="username" name="username" placeholder="一卡通号" class="auth_input" type="text" value="">
+                            <span id="usernameError" style="display:none;" class="auth_error">请输入用户名</span>
+                        </p>
+
+                        <p>
+                            <i class="auth_icon auth_icon_pwd"></i>
+                            <input id="password" placeholder="密码" class="auth_input" type="password" value="" autocomplete="off">
+			    <input id="passwordEncrypt" name="password" style="display:none;" type="text" value="">
+                            <span id="passwordError" style="display:none;" class="auth_error">请输入密码</span>
+                        </p>
+
+                        <p id="cpatchaDiv">
+    <i class="auth_icon auth_icon_bar"></i>
+    <input type="text" placeholder="验证码" id="captchaResponse" name="captchaResponse" class="auth_input captcha-input">
+    <img id="captchaImg" class="captcha-img" alt="验证码" title="验证码" src="./统一身份认证_files/captcha.html">
+            <span style="cursor: pointer;color: #1dadff;margin-left: 2px;" id="changeCaptcha" class="chk_text"></span>
+    <span id="cpatchaError" style="display:none;" class="auth_error">请输入验证码</span>
+</p>
+
+                            <p style="height: 20px;">
+                        
+                                <a id="getBackPasswordMainPage" href="https://pass.ujs.edu.cn/cas/getBackPasswordMainPage.do?service=http%3A%2F%2Fehall.ujs.edu.cn%2Flogin%3Fservice%3Dhttp%3A%2F%2Fehall.ujs.edu.cn%2Fnew%2Findex.html" class="auth_login_forgetp">
+									<small>忘记密码？</small>
+								</a>	
+                            </p>
+                        <p>
+                            <button type="submit" class="auth_login_btn primary full_width">登录
+                            </button>
+                        </p>
+                        
+						<div class="import-tit chinese_type">
+							<h2>温馨提示：</h2>
+							<span>新用户初始密码为“身份证后六位（不包含'X'）”，老用户密码不变</span>
+							<span>服务电话：88780360</span>
+							
+						</div>
+						<div class="import-tit english_type" style="display: none;">
+							<h2>温馨提示：</h2>
+							<span>新用户初始密码为“身份证后六位（不包含'X'）”，老用户密码不变</span>
+							<span>服务电话：88780360</span>
+							
+						</div>
+					
+						<div class="other-login-way">
+							<div class="box-line-tit">
+								<span class="chinese_type">您还可以使用以下方式登录</span>
+								<span class="english_type" style="display: none;">您还可以使用以下方式登录</span>
+							</div>
+							<div class="login-way-bd">
+										<div class="way-item">
+											<a href="https://pass.ujs.edu.cn/cas/combinedLogin.do?type=qq&amp;success=https://pass.ujs.edu.cn/cas/login?service=http%3A%2F%2Fehall.ujs.edu.cn%2Flogin%3Fservice%3Dhttp%3A%2F%2Fehall.ujs.edu.cn%2Fnew%2Findex.html" class="item" target="_blank">
+												<i class="qqway-icon"></i>
+												
+											</a> 
+										</div>
+					
+										<div class="way-item">
+											<a href="https://pass.ujs.edu.cn/cas/combinedLogin.do?type=weixin&amp;success=https://pass.ujs.edu.cn/cas/login?service=http%3A%2F%2Fehall.ujs.edu.cn%2Flogin%3Fservice%3Dhttp%3A%2F%2Fehall.ujs.edu.cn%2Fnew%2Findex.html" class="item" "="" target="_blank">
+												<i class="wxway-icon"></i>
+												
+											</a>
+										</div>							
+							</div>
+						</div>
+
+                        <input type="hidden" name="lt" value="LT-126384-Hbt7Xdf3qvM7Ju6MENgjh6c74nkAqT1632278452654-IBes-cas">
+                        <input type="hidden" name="dllt" value="userNamePasswordLogin">
+                        <input type="hidden" name="execution" value="e4s1">
+                        <input type="hidden" name="_eventId" value="submit">
+                        <input type="hidden" name="rmShown" value="1">
+						<input type="hidden" id="pwdDefaultEncryptSalt" value="DyeV240tgfh5VPAr">
+                    </form>
+                </div>
+                
+                    <div tabid="02" class="auth_tab_content_item" style="display:none;">
+                        <form id="casDynamicLoginForm" class="fm-v clearfix amp-login-form" action="fake.html" method="post">
+
+                            
+
+                            <p>
+                                <i class="auth_icon auth_icon_user"></i>
+                                <input id="username" name="username" placeholder="一卡通号/手机号" class="auth_input" type="text" value="">
+                                <span id="dynamicNameError" style="display:none;" class="auth_error">请输入用户名</span>
+                            </p>
+							<p>
+    <i class="auth_icon auth_icon_bar"></i>
+    <input type="text" placeholder="验证码" id="dynamicCodeCaptchaResponse" name="captchaResponse" class="auth_input captcha-input" style="width:95px;">
+    <img id="dynamicCodeCaptchaImg" class="captcha-img abs_right" alt="验证码" title="验证码">
+            <span style="cursor: pointer;color: #1dadff;margin-left: 2px;" id="dynamicCodeChangeCaptcha" class="chk_text"></span>
+    <span id="dyCpatchaError" style="display:none;" class="auth_error">请输入验证码</span>
+	
+</p>
+                            <p>
+                                <i class="auth_icon auth_icon_pwd"></i>
+                                <input type="text" class="auth_input" id="dynamicCode" name="dynamicCode" placeholder="短信验证码" style="width:95px;">
+                                <input type="button" id="getDynamicCode" value="获取验证码" class="auth_login_btn warning abs_right dynamicCode">
+                                <span id="dynamicCodeError" style="display:none;" class="auth_error">请输入短信验证码</span>
+                            </p>
+
+                            <p style="min-height: 25px;margin-bottom: 15px;">
+                                 <span id="sendCodeWarnMessage" style="font-size: 12px;color: rgb(230, 142, 142);margin: 14px;"></span>
+                            </p>
+
+                            <p style="margin-bottom: 34px;margin-bottom: 37px\9;">
+                                <button type="submit" class="auth_login_btn primary full_width">登录
+                                </button>
+                            </p>
+
+                            <input type="hidden" name="lt" value="LT-126384-Hbt7Xdf3qvM7Ju6MENgjh6c74nkAqT1632278452654-IBes-cas">
+                            <input type="hidden" name="dllt" value="dynamicLogin">
+                            <input type="hidden" name="execution" value="e4s1">
+                            <input type="hidden" name="_eventId" value="submit">
+                            <input type="hidden" name="rmShown" value="1">
+							<input type="hidden" id="dynamicPwdEncryptSalt" value="wsb73fHmEoa5wGdQ">
+                        </form>
+                    </div>
+                
+		
+                    <div tabid="03" class="auth_tab_content_item" style="display:none;">
+                        
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    
+    <title>扫码登录</title>
+    <link href="./统一身份认证_files/qrcode-basic.css" rel="stylesheet">
+    <!--[if IE 8]>
+    <style>
+        .qr_scan_box {
+            margin: 0;
+            background: #E3E3E3;
+        }
+    </style>
+    <![endif]-->
+
+
+    <form id="qrLoginForm" role="form" action="fake.html" method="post">
+        
+        <div id="qr_code" class="login--scan_box--scan">
+            <div class="login--scan_pic scan_code_pic">
+                <img id="qr_img" src="https://pass.ujs.edu.cn/cas/login?service=http%3A%2F%2Fehall.ujs.edu.cn%2Flogin%3Fservice%3Dhttp%3A%2F%2Fehall.ujs.edu.cn%2Fnew%2Findex.html" width="186">
+				<div class="code-reminder chinese_type">扫二维码登录校园门户</div>
+				<div class="code-reminder english_type" style="display: none;">Scanning the qr code to login the campus portal</div>
+				<div class="reminderbox">
+					<p class="reminder-tit chinese_type">温馨提示：</p>
+					<p class="reminder-tit english_type" style="display: none;">Warm prompt:</p>
+					<p class="reminder-conent chinese_type">
+						扫码登录前请先关注<a href="http://www.ujs.edu.cn/info/1180/18965.htm" target="_blank">“江苏大学企业微信号”</a>
+					</p>
+					<p class="reminder-conent english_type" style="display: none;">
+						Please follow the <a href="http://www.ujs.edu.cn/info/1180/18965.htm" target="_blank">Enterprise wechat account of UJS</a> before scanning the qr code
+					</p>
+				</div>
+
+            </div>
+        </div>
+        <div id="qr_success" class="success--scan_box--success" style="display:none;">
+            <div class="success--scan_box--succes--">
+                <div class="success--scan_box">
+                    <div class="success--scan_pic">
+                        <img alt="" src="./统一身份认证_files/Success.png" width="36" class="success--scan_success_img">
+                        <span class="success--title success--title_h1">扫描成功</span>
+                        <span class="success--sub_title">请在手机上『确认登录』</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="qr_invalid" class="refresh--scan_code--refresh--box" style="display:none;">
+            <div class="refresh--scan_pic refresh--scan_code_pic refresh--scan_code_refresh">
+                <img id="invalid_img" src="https://pass.ujs.edu.cn/cas/login?service=http%3A%2F%2Fehall.ujs.edu.cn%2Flogin%3Fservice%3Dhttp%3A%2F%2Fehall.ujs.edu.cn%2Fnew%2Findex.html" width="200">
+                <div class="refresh--scan_Invalid">
+                    <img id="qr_basic_refresh" width="58" alt="" src="./统一身份认证_files/refresh.png" class="refresh--scan_invalid_icon">
+                </div>
+            </div>
+        </div>
+
+        <input type="hidden" name="lt" value="LT-126384-Hbt7Xdf3qvM7Ju6MENgjh6c74nkAqT1632278452654-IBes-cas">
+        <input type="hidden" name="uuid" id="uuid" value="">
+        <input type="hidden" name="dllt" value="qrLogin">
+        <input type="hidden" name="execution" value="e4s1">
+        <input type="hidden" name="_eventId" value="submit">
+        <input type="hidden" name="rmShown" value="1">
+    </form>
+
+
+<script type="text/javascript">
+    var contextPath = "/cas";
+</script>
+<script type="text/javascript" src="./统一身份认证_files/jquery-1.9.1.min.js.下载"></script>
+<script type="text/javascript" src="./统一身份认证_files/qrcode.js.下载"></script>
+<script type="text/javascript">
+    $(function () {
+//        getQrCode();
+//        countDown();
+    });
+    $("#qr_basic_refresh").bind("click", function () {
+        getQrCode($("#uuid").val());
+        countDown();
+        $("#qr_code").show();
+        $("#qr_invalid").hide();
+    });
+</script>
+                    </div>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="hidenCaptchaDiv" style="display: none;">
+    <i class="auth_icon auth_icon_bar"></i>
+    <input type="text" placeholder="验证码" id="captchaResponse" name="captchaResponse" class="auth_input captcha-input">
+    <img id="captchaImg" class="captcha-img" alt="验证码" title="验证码">
+            <span style="cursor: pointer;color: #1dadff;margin-left: 2px;" id="changeCaptcha" class="chk_text"></span>
+    <span id="cpatchaError" style="display:none;" class="auth_error">请输入验证码</span>
+</div>
+
+
+<div class="clearfloat"></div>
+<div class="auth_login_footer">
+    
+
+ <span>
+     Copyright&nbsp;©&nbsp;2019 &nbsp;&nbsp;&nbsp;&nbsp;
+        版权所有&nbsp;&nbsp;江苏大学
+ </span>
+
+</div>
+</div>
+
+<script type="text/javascript" src="./统一身份认证_files/jquery.min.js.下载"></script>
+<script type="text/javascript" src="./统一身份认证_files/login-language.js.下载"></script>
+<script type="text/javascript" src="./统一身份认证_files/icheck.min.js.下载"></script>
+
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#cpatchaDiv").html($("#hidenCaptchaDiv").html());
+        });
+    </script>
+
+
+<script type="text/javascript" src="./统一身份认证_files/login.js.下载"></script>
+<script type="text/javascript" src="./统一身份认证_files/login-wisedu_v1.0.js.下载"></script>
+<!-- <script type="text/javascript" src="./统一身份认证_files/encrypt.js.下载"></script> -->
+
+<script type="text/javascript">
+
+    // 选中tab框
+    var dllt = '';
+    if (dllt != '' && dllt == 'dynamicLogin') {
+        selectLi($("#dyLogin"));
+    } else if (dllt != '' && dllt == 'qrLogin'){
+    	getQrCode();
+    	countDown();
+        selectLi($("#qrLogin"));
+    } else {
+        selectLi($("#accountLogin"));
+    }
+
+    $(document).ready(function () {
+		if (dllt != '' && dllt == 'dynamicLogin') {
+}else{
+   $("#captchaImg").attr("src","https://pass.ujs.edu.cn/cas/captcha.html?ts=306");
+}
+        
+
+        var service = GetQueryString("service");
+        if (service) {
+            $("#getBackPasswordMainPage").attr("href", "getBackPasswordMainPage.do?service=" + encodeURIComponent(service));
+        }
+    });
+
+
+</script>
+
+
+
+
+    
+
+</body></html>

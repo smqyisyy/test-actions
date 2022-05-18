@@ -1,0 +1,31 @@
+/**
+ * 定制脚本js 编辑
+ */
+(function(isPortalCustom, undefined) {
+
+    /**
+     * 桌面数据重新排序
+     * 局部干预
+     * @param  {[type]} datas 原桌面卡片的数据
+     * @return {[type]}       返回排好序的桌面数据
+     */
+    isPortalCustom.sortDesktopData = function(datas) {
+
+
+        //return false;
+
+        return datas;
+    };
+
+
+    /**
+     * 桌面模块下整体干预
+     * @param  {[type]} data 原桌面卡片的数据
+     * @return {[type]}      [description]
+     */
+    /*   isPortalCustom.desktopOverallInte = function(data) {
+           console.log('整体干预中！');
+
+       };*/
+
+}(window.AmpIsPortalCustom = window.AmpIsPortalCustom || {}));

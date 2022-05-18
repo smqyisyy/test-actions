@@ -1,0 +1,113 @@
+ var loadCssCount = 0;
+
+
+ var skin = '';
+ var skinName = localStorage.skinName;
+ skinName = getSkinName(skinName);
+ if (skinName == 'default' || skinName == '' || skinName == undefined || skinName == 'undefined') {
+ 	skin = parent.window.AMPConfigure.portalSkin;
+ } else {
+ 	skin = skinName;
+ }
+
+ //获取skincssPath的地址 针对皮肤定制做的修改
+ var skinCssPath = getNewSkinCssPath(skin);
+ var folderPath = self === parent ? skinCssPath + 'dark/' : '../css/dark/';
+ if (self !== parent) {
+ 	if (/\/model\./.test(window.location.href)) {
+ 		folderPath = '../../css/dark/';
+ 	} else {
+ 		folderPath = '../css/dark/';
+ 	}
+ }
+
+ //加载amp.min.css 样式表
+ var ampCssRef = document.createElement('link');
+ ampCssRef.setAttribute("rel", "stylesheet");
+ ampCssRef.setAttribute("type", "text/css");
+ ampCssRef.setAttribute("id", "ampChangeSkinLink");
+ ampCssRef.setAttribute("href", folderPath + skin + "/amp.min.css");
+ document.getElementsByTagName("head")[0].appendChild(ampCssRef);
+ ampCssRef.onload = function() {
+ 	loadSkinCssComplete();
+ }
+
+ //加载skin.min.css 样式表
+ var ampCssRefSkin = document.createElement('link');
+ ampCssRefSkin.setAttribute("rel", "stylesheet");
+ ampCssRefSkin.setAttribute("type", "text/css");
+ ampCssRefSkin.setAttribute("id", "ampChangeSkinLinkSkin");
+ ampCssRefSkin.setAttribute("href", folderPath + skin + "/skin.min.css");
+ document.getElementsByTagName("head")[0].appendChild(ampCssRefSkin);
+ ampCssRefSkin.onload = function() {
+ 	loadSkinCssComplete();
+ }
+
+ //加载amp_custom.css定制文件
+ if (parent.window.AMPConfigure.portalTheme_custom) {
+ 	var ampCustomSkin = document.createElement('link');
+ 	ampCustomSkin.setAttribute("rel", "stylesheet");
+ 	ampCustomSkin.setAttribute("type", "text/css");
+ 	ampCustomSkin.setAttribute("href", 'portal_custom/css/dark' + "/amp_custom.css");
+ 	document.getElementsByTagName("head")[0].appendChild(ampCustomSkin);
+ }
+
+ function loadSkinCssComplete() {
+ 	loadCssCount++;
+ 	if (loadCssCount === 2) {
+ 		var ampLoadingPage = document.getElementById('ampLoadingPage');
+ 		if (ampLoadingPage) {
+ 			ampLoadingPage.style.opacity = '0';
+ 		}
+ 	}
+ }
+
+
+ function getNewSkinCssPath(skinName) {
+ 	var _custom_skin_list = parent.window.AMPConfigure.portalSkin_custom;
+ 	var skinCssPath = parent.window.AMPConfigure.resSkinCssPath;
+ 	if (typeof _custom_skin_list != 'undefined') {
+ 		skinList = _custom_skin_list.length;
+ 		if (skinList > 0) {
+ 			for (var i = 0; i < skinList; i++) {
+ 				var skinItem = _custom_skin_list[i];
+ 				if (skinItem.enable && skinItem.skinColor == skinName) {
+ 					skinCssPath = 'portal_custom/css/';
+ 					break;
+ 				}
+ 			}
+ 		}
+ 	}
+ 	return skinCssPath;
+ }
+
+ /**
+  * 由于新皮肤要与老的皮肤保持一致性，故需要找到相对应的皮肤
+  */
+ function getSkinName(skinName) {
+ 	var skinName = skinName;
+ 	var newSkinName = '';
+ 	switch (skinName) {
+ 		case 'blue':
+ 			newSkinName = 'indigo';
+ 			break;
+ 		case 'cyan-arctic':
+ 			newSkinName = 'teal';
+ 			break;
+ 		case 'green-olive':
+ 			newSkinName = 'millennium';
+ 			break;
+ 		case 'red-strawberry':
+ 			newSkinName = 'cherry';
+ 			break;
+ 		case 'purple':
+ 			newSkinName = 'magenta';
+ 			break;
+ 		case 'yellow-fawn':
+ 			newSkinName = 'golden';
+ 			break;
+ 		default:
+ 			newSkinName = skinName;
+ 	}
+ 	return newSkinName;
+ }

@@ -1,0 +1,73 @@
+var Wisedu = window.Wisedu || {};
+Wisedu.ampAppDataSend = function (appKey, appId, appName) {
+    var userNewAnalysisDataJson = {
+        schoolId: "Other",
+        siteType: "Other"
+    };
+    var CommonUtil = {
+        logError: function (e) {
+            if (window.console) {
+                console.log(e.message);
+            }
+        },
+        isEmpty: function (o) {
+            return ((null == o) || (undefined == o) || ("" == o) || (o.length < 1));
+        },
+        sendDataByNewAnalysis: function () {
+            try {
+                AmpUtils.dataAnalysis("访问应用", ({
+                    "appId": appId,
+                    "appName": appName,
+                    "appKey": appKey,
+                    "siteType": userNewAnalysisDataJson.siteType,
+                    "schoolId": userNewAnalysisDataJson.schoolId
+                }));
+            } catch (e) {
+                CommonUtil.logError(e);
+            }
+        }
+
+    };
+    var InitData = {
+        setUserId: function () {
+            var userId = "";
+            try {
+                var userIdFlag = "ampUserId";
+                userId = sessionStorage[userIdFlag];
+                if (CommonUtil.isEmpty(userId)) {
+                    userId = document.getElementById("analysisUserId").value;
+                    sessionStorage[userIdFlag] = userId;
+                }
+            } catch (e) {
+                userId = "guest";
+                CommonUtil.logError(e);
+            }
+            userNewAnalysisDataJson.userId = userId;
+        },
+        setSiteType: function () {
+            var siteType = "other";
+            try {
+                siteType = sessionStorage["ampSiteType"] ? sessionStorage["ampSiteType"] : "other";
+            } catch (e) {
+                siteType = "other";
+                CommonUtil.logError(e);
+            }
+            userNewAnalysisDataJson.siteType = siteType;
+        },
+        init: function () {
+            try {
+                userNewAnalysisDataJson.schoolId = AMPConfigure.schoolId;
+                this.setUserId();
+                this.setSiteType();
+            } catch (e) {
+                CommonUtil.logError(e);
+            }
+        }
+    };
+    try {
+        InitData.init();
+        CommonUtil.sendDataByNewAnalysis(); //glhan发送到新的统计分析
+    } catch (e) {
+        CommonUtil.logError(e);
+    }
+};
